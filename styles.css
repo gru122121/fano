@@ -1,0 +1,213 @@
+:root {
+    --primary-orange: #ff6b00;
+    --secondary-orange: #ff8533;
+    --deep-orange: #cc5500;
+    --glass-border: rgba(255, 107, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #cc5500, #ff6b00);
+    color: white;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Image */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/489460/8583d2736f44b9fa9b5b1c340cdc62802139ef61.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 700px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Clean Glass Card */
+.main-card {
+    width: 100%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.main-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(255, 107, 0, 0.3);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover img {
+    transform: scale(1.1);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+/* Clean Social Buttons */
+.social-links {
+    display: grid;
+    gap: 12px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateX(8px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn i {
+    font-size: 20px;
+    margin-right: 12px;
+    color: white;
+}
+
+.text-content span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.text-content small {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive */
+@media (max-height: 800px) {
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .social-btn {
+        padding: 10px 16px;
+    }
+    
+    .social-btn i {
+        font-size: 18px;
+    }
+    
+    .text-content span {
+        font-size: 0.9rem;
+    }
+    
+    .text-content small {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .main-card {
+        padding: 20px;
+    }
+}
+
+/* Replace the Font Awesome X styles with these */
+.x-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    color: white;
+}
+
+.social-btn:hover .x-logo {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Remove the previous Font Awesome X styles */
+.fa-x-twitter {
+    display: none;
+}
+
+/* Add these styles to maintain consistency with other buttons */
+.social-btn.patreon {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-btn.patreon i {
+    color: white;
+}
+
+/* Optional: Add a subtle orange glow for Patreon hover */
+.social-btn.patreon:hover {
+    transform: translateX(8px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+  
+  
